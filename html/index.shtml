@@ -1,0 +1,7 @@
+<html>
+<head><title>teste</title></head>
+</html>
+
+You are logged in as: <!--#echo var="REMOTE_USER" -->
+
+<pre> <!--#printenv --> </pre>
