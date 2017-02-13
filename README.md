@@ -6,19 +6,11 @@ Esse exemplo utiliza o **Apache** como servidor Web e o módulo **mod_auth_openi
 ## Configurações adicionais
 Abra o arquivo apache2.config e substitua os tokens **{TenantId}**, **{{RedirectUrl}}**, **{ClientId}** e **{ClientSecret}** por valores reais do seu ambiente.
 
-
-- OIDCProviderIssuer https://sts.windows.net/{TenantId}
-- OIDCProviderTokenEndpoint https://login.microsoftonline.com/{TenantId}/oauth2/token
-- OIDCProviderTokenEndpointAuth client_secret_post
 - OIDCClientID {ClientId}
 - OIDCClientSecret {ClientSecret}
-- OIDCProviderAuthorizationEndpoint https://login.microsoftonline.com/{TenantId}/oauth2/authorize
-- OIDCProviderJwksUri https://login.windows.net/common/discovery/keys
-- OIDCRedirectURI {{RedirectUrl}}
-- OIDCResponseType id_token
+- OIDCProviderMetadataURL https://sts.windows.net/{TenantId}/.well-known/openid-configuration
+- OIDCRedirectURI {RedirectUrl}
 - OIDCResponseMode form_post
-
-- OIDCProviderUserInfoEndpoint https://login.microsoftonline.com/{TenantId}/openid/userinfo
 - OIDCCryptoPassphrase {ClientSecret}
 
 
